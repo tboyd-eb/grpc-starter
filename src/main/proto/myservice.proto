@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.myorg.myservice;
+
+option java_multiple_files = true;
+option java_package = "com.myorg.myservice.proto";
+option java_outer_classname = "MyServiceProto";
+
+service MyService {
+  rpc GetCompliments (GetComplimentsRequest) returns (GetComplimentsResponse) {}
+}
+
+message GetComplimentsRequest {}
+
+message GetComplimentsResponse {
+  repeated string compliments = 1;
+}

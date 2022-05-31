@@ -1,10 +1,17 @@
 package com.myorg.myservice
 
-import com.myorg.myservice.controllers.CreateEventsController
+import io.grpc.Server
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
-fun main(args: Array<String>) {
+fun main() {
     val appContext = AnnotationConfigApplicationContext(AppConfig::class.java)
-    val controller = appContext.getBean(CreateEventsController::class.java)
-    controller.run()
+    val server = appContext.getBean(Server::class.java)
+    println("Here")
+    server.start()
+    Runtime.getRuntime().addShutdownHook(
+        Thread {
+            server.shutdown()
+        }
+    )
+    server.awaitTermination()
 }
