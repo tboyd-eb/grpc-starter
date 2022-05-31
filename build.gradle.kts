@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework:spring-context:5.3.10")
+    implementation("org.springframework:spring-context:${findProperty("spring_version")}")
 }
 
 tasks.withType<KotlinCompile> {
