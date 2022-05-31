@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.5.21"
     application
 }
 
-group = "org.example"
+group = "com.myorg"
 version = "1.0-SNAPSHOT"
 
 repositories {
