@@ -5,7 +5,6 @@ import com.myorg.myservice.validators.CreateEventsValidator
 import io.grpc.Server
 import io.grpc.ServerBuilder
 import io.grpc.protobuf.services.ProtoReflectionService
-import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean
 
 const val minGeneratedEventIdValueInclusive = 1UL
