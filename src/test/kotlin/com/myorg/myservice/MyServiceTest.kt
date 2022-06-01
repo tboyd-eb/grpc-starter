@@ -19,12 +19,15 @@ class MyServiceTest : DescribeSpec({
     describe("GetCompliments endpoint") {
         it("should respond with a list of compliments") {
             val expectedResponse = GetComplimentsResponse.newBuilder()
-                .addAllCompliments(listOf("Good job!", "You rock!", "Nicely done!"))
+                .addAllCompliments(
+                    listOf("Good job!", "You rock!", "Nicely done!")
+                )
                 .build()
-
             val request = GetComplimentsRequest.newBuilder().build()
 
-            coEvery { myService.getCompliments(request) } returns expectedResponse
+            coEvery {
+                myService.getCompliments(request)
+            } returns expectedResponse
         }
     }
 })
