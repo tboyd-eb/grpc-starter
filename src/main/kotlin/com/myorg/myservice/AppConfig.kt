@@ -18,7 +18,8 @@ open class AppConfig {
         return CreateEventsController(
             validator = createEventsValidator,
             repo = eventsRepository,
-            minGeneratedEventIdValueInclusive = minGeneratedEventIdValueInclusive,
+            minGeneratedEventIdValueInclusive =
+            minGeneratedEventIdValueInclusive,
             maxGeneratedEventIdValueInclusive = ULong.MAX_VALUE,
         )
     }
@@ -34,7 +35,9 @@ open class AppConfig {
     }
 
     @Bean
-    open fun myService(createEventsController: CreateEventsController): MyService {
+    open fun myService(
+        createEventsController: CreateEventsController
+    ): MyService {
         return MyService(createEventsController)
     }
 
