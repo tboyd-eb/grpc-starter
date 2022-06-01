@@ -4,7 +4,7 @@ import com.myorg.myservice.EventsRepository
 import com.myorg.myservice.proto.GetComplimentsResponse
 import com.myorg.myservice.validators.CreateEventsValidator
 
-open class CreateEventsController(
+class CreateEventsController(
     validator: CreateEventsValidator,
     repo: EventsRepository,
     minGeneratedEventIdValueInclusive: ULong,
