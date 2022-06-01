@@ -11,10 +11,9 @@ class CreateEventsController(
     maxGeneratedEventIdValueInclusive: ULong,
 ) {
     fun run(): GetComplimentsResponse {
-        val builder = GetComplimentsResponse.newBuilder()
-        builder.addAllCompliments(
-            listOf("Good job!", "You rock!", "Nicely done!")
-        )
-        return builder.build()
+        return GetComplimentsResponse
+            .newBuilder()
+            .addAllCompliments(listOf("Good job!", "You rock!", "Nicely done!"))
+            .build()
     }
 }

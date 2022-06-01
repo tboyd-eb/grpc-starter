@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Bean
 
 const val minGeneratedEventIdValueInclusive = 1UL
 
-open class AppConfig {
+class AppConfig {
     @Bean
-    open fun createEventsController(
+    fun createEventsController(
         createEventsValidator: CreateEventsValidator,
         eventsRepository: EventsRepository,
     ): CreateEventsController {
@@ -25,24 +25,24 @@ open class AppConfig {
     }
 
     @Bean
-    open fun createEventsValidator(): CreateEventsValidator {
+    fun createEventsValidator(): CreateEventsValidator {
         return CreateEventsValidator()
     }
 
     @Bean
-    open fun eventsRepository(): EventsRepository {
+    fun eventsRepository(): EventsRepository {
         return EventsRepository()
     }
 
     @Bean
-    open fun myService(
+    fun myService(
         createEventsController: CreateEventsController
     ): MyService {
         return MyService(createEventsController)
     }
 
     @Bean
-    open fun server(myService: MyService): Server {
+    fun server(myService: MyService): Server {
         val port = 50051
         return ServerBuilder
             .forPort(port)

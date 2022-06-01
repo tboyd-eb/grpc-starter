@@ -6,9 +6,11 @@ import com.myorg.myservice.proto.GetComplimentsResponse
 import com.myorg.myservice.proto.MyServiceGrpcKt
 
 class MyService(
-    val createEventsController: CreateEventsController,
+    private val createEventsController: CreateEventsController,
 ) : MyServiceGrpcKt.MyServiceCoroutineImplBase() {
-    override suspend fun getCompliments(request: GetComplimentsRequest): GetComplimentsResponse {
+    override suspend fun getCompliments(
+        request: GetComplimentsRequest
+    ): GetComplimentsResponse {
         return createEventsController.run()
     }
 }
